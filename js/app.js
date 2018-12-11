@@ -68,19 +68,29 @@ $(()=>{
     });
 
     function getWelcomePage(ctx) {
+        ctx.isAuth=auth.isAuth();
         if (!auth.isAuth()) {
-            ctx.isAuth=false;
+
             ctx.loadPartials(HEAD_FOOT).then(function () {
                 this.partial('./templates/welcome-guest.hbs');
             });
 
         }else {
-            ctx.isAuth=true;
+            memeService.getAllMemes()
+                .then((memes) => {
+                    memes.forEach((p, i) => {
+                        p.isCreator = p._acl.creator === sessionStorage.getItem('userId');
+                    });
+
             ctx.username = sessionStorage.getItem('username');
-            ctx.loadPartials(HEAD_FOOT).then(function () {
+            ctx.memes=memes;
+            ctx.loadPartials({
+                header: './templates/common/header.hbs',
+                footer: './templates/common/footer.hbs',
+              meme:'./templates/meme.hbs'}).then(function () {
                 this.partial('./templates/memes.hbs');
             });
-
+                });
         }
 
         ctx.redirect('/');
