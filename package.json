@@ -13,7 +13,6 @@
     "express": "^4.16.4",
     "handlebars": "^4.0.12",
     "jquery": "^3.3.1",
-    "reload": "^2.4.0",
     "sammy": "^0.7.6"
   }
 }

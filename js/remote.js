@@ -1,7 +1,7 @@
 let remote = (() => {
     const BASE_URL = 'https://baas.kinvey.com/';
-    const APP_KEY = 'kid_BkAtE0xnM'; // APP KEY HERE
-    const APP_SECRET = 'ab65a19303e54d0da8d668e2d1e4df2e'; // APP SECRET HERE
+    const APP_KEY = 'kid_B1sMXir1N'; // APP KEY HERE
+    const APP_SECRET = '52a9f6a4435b44848d83f6ea2949e200'; // APP SECRET HERE
 
     function makeAuth(auth) {
         if (auth === 'basic') {
