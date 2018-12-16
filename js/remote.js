@@ -25,11 +25,11 @@ let remote = (() => {
         }
     }
 
-    function get (module, endpoint, auth) {
+    function get(module, endpoint, auth) {
         return $.ajax(makeRequest('GET', module, endpoint, auth));
     }
 
-    function post (module, endpoint, auth, data) {
+    function post(module, endpoint, auth, data) {
         let obj = makeRequest('POST', module, endpoint, auth);
         if (data) {
             obj.data = data;

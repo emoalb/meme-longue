@@ -1,11 +1,11 @@
 <nav>
     <a class="active" href="#">Home</a>
     {{#if isAuth}}
-    <a href="#">Create Meme</a>
-    <div id="profile">
-        <a>Welcome {{username}}</a>
-        <a href="#">My Profile</a>
-        <a href="#/logout">logout</a>
-    </div>
+        <a href="#/create">Create Meme</a>
+        <div id="profile">
+            <a>Welcome {{username}}</a>
+            <a href="#">My Profile</a>
+            <a href="#/logout">logout</a>
+        </div>
     {{/if}}
 </nav>

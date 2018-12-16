@@ -7,19 +7,20 @@ let auth = (() => {
         sessionStorage.setItem('authtoken', userData._kmd.authtoken);
         sessionStorage.setItem('username', userData.username);
         sessionStorage.setItem('email', userData.email);
-        sessionStorage.setItem('avatarUrl',userData.avatarUrl);
+        sessionStorage.setItem('avatarUrl', userData.avatarUrl);
         sessionStorage.setItem('userId', userData._id);
     }
-    function register (userData) {
+
+    function register(userData) {
         return remote.post('user', '', 'basic', userData);
     }
 
     function login(username, password) {
-        let obj = { username, password };
+        let obj = {username, password};
 
         return remote.post('user', 'login', 'basic', obj)
     }
-    
+
     function logout() {
         return remote.post('user', '_logout', 'kinvey');
     }
